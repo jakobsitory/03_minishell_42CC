@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tzanchi <tzanchi@student.42berlin.de>      +#+  +:+       +#+        */
+/*   By: jschott <jschott@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 20:29:08 by tzanchi           #+#    #+#             */
-/*   Updated: 2023/11/20 15:15:43 by tzanchi          ###   ########.fr       */
+/*   Updated: 2024/08/08 11:35:14 by jschott          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,20 @@ void	free_and_reset_io(t_data *data)
 	data->output.fd = 1;
 }
 
+/**
+ * Frees memory allocated for an array of strings in reverse order and returns an exit code.
+ * 
+ * @param array A pointer to the first element of an array of char pointers. Each char pointer in the array points to a
+ * dynamically allocated string.
+ * @param i The index of the last element in the array that needs to be freed. This is typically the size of the array
+ * minus one, as array indices are zero-based.
+ * @param exit_code An integer value that the function will return after freeing the allocated memory. This can be used
+ * to indicate the success or failure of the operation or the state of the program at the point where memory is
+ * being freed.
+ * @return The `exit_code` passed as a parameter, allowing the caller to specify what value should be returned after
+ * the memory cleanup operation.
+ * 
+ */
 int	reverse_free_char_array(char **array, size_t i, int exit_code)
 {
 	while (i)

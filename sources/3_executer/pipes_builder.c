@@ -6,17 +6,20 @@
 /*   By: jschott <jschott@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:47:13 by jschott           #+#    #+#             */
-/*   Updated: 2023/11/29 10:28:36 by jschott          ###   ########.fr       */
+/*   Updated: 2024/08/08 11:36:55 by jschott          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-/// @brief creates all necessary pipes based on number of commands in a pipeline
-/// @param fd_out file descriptor of output of command pipeline
-/// @param fd_in file descriptor of output of command pipeline
-/// @param cmds_num number of commands in the pipeline
-/// @return pointer to the pipes created
+/**
+ * @brief creates all necessary pipes based on number of commands in a pipeline
+ * 
+ * @param fd_out file descriptor of output of command pipeline
+ * @param fd_in file descriptor of output of command pipeline
+ * @param cmds_num number of commands in the pipeline
+ * @return pointer to the pipes created 
+ */
 int	*build_pipes(int fd_out, int fd_in, int cmds_num)
 {
 	int	*fd_pipes;
